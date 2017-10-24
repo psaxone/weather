@@ -7,6 +7,9 @@ $(document).ready(function(){
         console.log(URLcompleta);
         $.get(URLcompleta, function( data ) {
             console.log( data );
+            $(document).ready(function(){
+                $("p").append(data.name);
+            });   
         });
     });
 });

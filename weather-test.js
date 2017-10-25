@@ -7,11 +7,9 @@ $(document).ready(function(){
         console.log(URLcompleta);
         $.get(URLcompleta, function( data ) {
             console.log( data );
-            $(document).ready(function(){
                 $("#city").append(data.name);
                 $("#temperature").append(data.main.temp);
                 $("#pressure").append(data.main.pressure);
-            });   
         });
     });
 });

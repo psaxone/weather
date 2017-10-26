@@ -7,12 +7,41 @@ $(document).ready(function(){
         console.log(URLcompleta);
         $.get(URLcompleta, function( data ) {
             console.log( data );
-                $("#city").append(data.name);
-                $("#temperature").append(data.main.temp);
-                $("#pressure").append(data.main.pressure);
+                $("#city").html(data.name);
+                $("#temperature").html(data.main.temp);
+                $("#pressure").html(data.main.pressure);
+                updateMap(data)
         });
     });
 });
+
+
+function initMap() {
+   
+    var uluru = {lat: -34.726868, lng: -58.255097};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: uluru
+    });
+    var marker = new google.maps.Marker({
+      position: uluru,
+      map: map
+    });
+}
+
+function updateMap(data) {
+    
+     var uluru = {lat: (data.coord.lat), lng: (data.coord.lon)};
+     var map = new google.maps.Map(document.getElementById('map'), {
+       zoom: 4,
+       center: uluru
+     });
+     var marker = new google.maps.Marker({
+       position: uluru,
+       map: map
+     });
+ }
+ 
 
 
 

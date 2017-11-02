@@ -57,3 +57,14 @@ td, th {
 #div-tabla {
     padding: 30px;
 }
+
+#div-popup {
+    position: absolute;
+    background-image: url('http://images.mentalfloss.com/sites/default/files/iStock-104472907.jpg?resize=1100x740');
+    height: 50%;
+    width: 50%;
+    z-index: 1;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

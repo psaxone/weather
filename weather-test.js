@@ -14,8 +14,8 @@ $(document).ready(function(){
                 $("#temperature").html(data.main.temp);
                 $("#temp_max").html(data.main.temp_max);
                 $("#temp_min").html(data.main.temp_min);
-                $("#pressure").html(data.main.pressure);
-                $("#humidity").html(data.main.humidity);
+                $("#pressure").html(data.main.pressure + ' hPa');
+                $("#humidity").html(data.main.humidity + ' %');
                 updateMap(data)
         });
     });

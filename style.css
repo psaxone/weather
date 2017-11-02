@@ -1,4 +1,59 @@
-#map {
-    height: 400px;
+html,body {
+    height: 100%;
     width: 100%;
+}
+
+#div-button {
+    padding: 15px 15px 15px 15px;
+}
+
+button {
+    position: absolute;
+    right: 15px;
+    background-color: rgb(59, 119, 250);
+    border: none;
+    color: white;
+    padding: 14px 32px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type=text] {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 150px 12px 40px;
+}
+
+.fa {
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+#tabla {
+    width: 100%;
+    min-height: 100px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    color: black;
+    font-size: 16px;
+}
+
+td, th {
+    border: 1px solid rgb(59, 119, 250);
+    padding: 8px;
+}
+
+#div-tabla {
+    padding: 30px;
 }

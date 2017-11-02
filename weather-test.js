@@ -12,7 +12,10 @@ $(document).ready(function(){
             console.log( data );
                 $("#city").html(data.name);
                 $("#temperature").html(data.main.temp);
+                $("#temp_max").html(data.main.temp_max);
+                $("#temp_min").html(data.main.temp_min);
                 $("#pressure").html(data.main.pressure);
+                $("#humidity").html(data.main.humidity);
                 updateMap(data)
         });
     });
@@ -22,7 +25,7 @@ $(document).ready(function(){
 function initMap() {
     var uluru = {lat: 0, lng: 0};
     map = new google.maps.Map(document.getElementById('map'), {
-      zoom: 1,
+      zoom: 2,
       center: uluru
     });
 }

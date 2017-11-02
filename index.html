@@ -2,34 +2,43 @@
 <html>
 <head>
 <title>Weather App</title>
+<link rel="stylesheet" href="./reset.css"/>
 <link rel="stylesheet" href="./style.css"/>
+<script src="https://use.fontawesome.com/65463d3444.js"></script>
 
 </head>
 <body>
 
+<div id="div-button">
+    <i class="fa fa-search" aria-hidden="true"></i>
+        <input type="text" id="ciudad" value="" placeholder="Ciudad"><button>Buscar</button>
+</div>
 
-
-
-<p>Ciudad: <input type="text" id="ciudad" value=""></p>
-<button>Buscar</button>
-
-<p></p>
-
-<table border="1px solid black">
-    <tr>
-    <td>Ciudad</td>
-    <td><p id="city"></p></td>
-    </tr>
-    <tr>
-    <td>Temperatura</td>
-    <td><p id="temperature"></p></td>
-    </tr>
-    <tr>
-    <td>Presion</td>
-    <td><p id="pressure"></p></td>
-    </tr>
-    </table>
 <div id="map"></div>
+
+<div id="div-tabla">
+    <table id="tabla">
+        <tr>
+            <th>Ciudad</th>
+            <th>Temperatura</th>
+            <th>Temperatura Máxima</th>
+            <th>Temperatura Mínima</th>
+            <th>Presión (hPa)</th>
+            <th>Humedad (%)</th>
+        </tr>
+        
+        <tr>
+            <td><p id="city"></p></td>
+            <td><p id="temperature"></p></td>
+            <td><p id="temp_max"></p></td>
+            <td><p id="temp_min"></p></td>
+            <td><p id="pressure"></p></td>
+            <td><p id="humidity"></p></td>
+        </tr>
+    
+    </table>
+</div>
+
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 crossorigin="anonymous"></script>

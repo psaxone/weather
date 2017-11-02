@@ -1,3 +1,6 @@
+var map = null
+var marker = null
+
 $(document).ready(function(){
     $("button").click(function(){
         var apiKEY = "&units=metric&appid=af95bc4e30710dff7080cfb67eadba30"
@@ -18,25 +21,24 @@ $(document).ready(function(){
 
 function initMap() {
     var uluru = {lat: 0, lng: 0};
-    var map = new google.maps.Map(document.getElementById('map'), {
+    map = new google.maps.Map(document.getElementById('map'), {
       zoom: 1,
       center: uluru
     });
 }
 
 function updateMap(data) {
-    
      var uluru = {lat: (data.coord.lat), lng: (data.coord.lon)};
-     var map = new google.maps.Map(document.getElementById('map'), {
-       zoom: 6,
-       center: uluru
-     });
-     var marker = new google.maps.Marker({
-       position: uluru,
-       map: map
-     });
+     if (marker === null){
+        marker = new google.maps.Marker({
+             position: uluru,
+             map: map,
+        })
+     } else {
+         marker.setPosition(uluru)
+     }
+     map.setZoom(5);
+     map.panTo(uluru);
  }
  
-
-
-
+ 

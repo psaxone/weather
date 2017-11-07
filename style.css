@@ -60,17 +60,12 @@ td, th {
 
 #div-popup {
     position: absolute;
-    background-image: url('http://images.mentalfloss.com/sites/default/files/iStock-104472907.jpg?resize=1100x740');
-    height: 500px;
-    width: 900px;
-    z-index: 1;
-    background-position: center center;
-    background-repeat: repeat;
-    background-attachment: scroll;
-    left: 50%;
     top: 50%;
-    margin-top: -450px;
-    margin-left: -250px;
+    left: 50%;
+    height: 300px;
+    width: 600px;
+    margin-top: -250px;
+    margin-left: -300px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -88,20 +83,15 @@ td, th {
 }
 
 #div-info1 {
-    min-height: 300px;
-    min-width: 200px;
+    height: 100%;
+    width: 50%;
     background-color: black;
-    background-position: center center;
     float: left;
-    margin-top: 18.75%;
-    margin-bottom: 18.75%;
-    margin-left: 12.5%;
 }
 
 #div-info2 {
-    min-height: 300px;
-    min-width: 200px;
+    height: 100%;
+    width: 50%;
     background-color: white;
-    background-position: center center;
     float: right;
 }

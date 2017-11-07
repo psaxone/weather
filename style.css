@@ -66,5 +66,41 @@ td, th {
     z-index: 1;
     background-position: center center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: scroll;
+    left: 25%;
+    right: 25%;
+    top: 25%;
+}
+
+@media only screen and (max-width: 768px) {
+    #div-popup {
+        width: 100%;
+        top: 25%;
+        left: 0px;
+        right: 0px;
+    }
+}
+#div-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+#div-info1 {
+    min-height: 300px;
+    min-width: 200px;
+    background-color: black;
+    background-position: center center;
+    float: left;
+    margin-top: 18.75%;
+    margin-bottom: 18.75%;
+    margin-left: 12.5%;
+}
+
+#div-info2 {
+    min-height: 300px;
+    min-width: 200px;
+    background-color: white;
+    background-position: center center;
+    float: right;
 }

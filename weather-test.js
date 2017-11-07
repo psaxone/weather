@@ -40,7 +40,7 @@ function updateMap(data) {
      } else {
          marker.setPosition(uluru)
      }
-     map.setZoom(5);
+     map.setZoom(13);
      map.panTo(uluru);
  }
  

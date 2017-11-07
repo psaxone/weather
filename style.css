@@ -61,15 +61,16 @@ td, th {
 #div-popup {
     position: absolute;
     background-image: url('http://images.mentalfloss.com/sites/default/files/iStock-104472907.jpg?resize=1100x740');
-    height: 50%;
-    width: 50%;
+    height: 500px;
+    width: 900px;
     z-index: 1;
     background-position: center center;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-attachment: scroll;
-    left: 25%;
-    right: 25%;
-    top: 25%;
+    left: 50%;
+    top: 50%;
+    margin-top: -450px;
+    margin-left: -250px;
 }
 
 @media only screen and (max-width: 768px) {

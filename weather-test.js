@@ -30,6 +30,10 @@ $(document).ready(function(){
                 });
         });
     });
+    $("#boton-geo").click(function(){
+        geoLoc();
+        console.log(geoLoc);
+    });
 });
 
 function initMap() {
@@ -54,4 +58,11 @@ function updateMap(data) {
      map.panTo(uluru);
  }
  
- 
+ function geoLoc() {
+    navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = {
+          lat: (position.coords.latitude),
+          lng: (position.coords.longitude),
+        };
+    }
+ }

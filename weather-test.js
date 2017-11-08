@@ -10,12 +10,12 @@ $(document).ready(function(){
         console.log(URLcompleta);
         $.get(URLcompleta, function( data ) {
             console.log( data );
-                $("#city").html(data.name);
-                $("#temperature").html(data.main.temp);
+                $("#city").html(data.name).addClass("h2-popup");
+                $("#temperature").html(data.main.temp + 'º').addClass("h1-popup");
                 $("#temp_max").html(data.main.temp_max);
                 $("#temp_min").html(data.main.temp_min);
-                $("#pressure").html(data.main.pressure + ' hPa');
-                $("#humidity").html(data.main.humidity + ' %');
+                $("#pressure").html(data.main.pressure + ' hPa').addClass("h3-popup");
+                $("#humidity").html(data.main.humidity + ' %').addClass("h3-popup");
                 updateMap(data)
         });
     });

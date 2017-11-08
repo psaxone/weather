@@ -4,6 +4,7 @@
 <title>Weather App</title>
 <link rel="stylesheet" href="./reset.css"/>
 <link rel="stylesheet" href="./style.css"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,700,700i" rel="stylesheet">
 <script src="https://use.fontawesome.com/65463d3444.js"></script>
 
 </head>
@@ -17,7 +18,18 @@
 <div id="div-container">
         <div id="map"></div>
     <div id="div-popup">
-        <div id="div-info1"></div><div id="div-info2"></div>
+        <div id="div-info1">
+            <tr>
+                <td><h1 id="temperature" class="h1-popup"></h1></td>
+                <td><h2 id="city" class="h2-popup"></h2></td>
+        </div><div id="div-info2"></div>
+        <div id="div-info3">
+            
+            <h3 id="pressure" class="h3-popup"></h3>
+            <h3 id="humidity" class="h3-popup" style="float:right"></h3>
+            
+            
+        </div>
     </div>
 </div>
 

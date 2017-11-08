@@ -9,14 +9,27 @@ html,body {
 
 button {
     position: absolute;
-    right: 15px;
+    right: 91px;
     background-color: rgb(59, 119, 250);
     border: none;
     color: white;
-    padding: 14px 32px;
+    padding: 14px 15px;
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
+}
+
+#boton-geo {
+    position: absolute;
+    background-color: rgb(59, 119, 250);
+    border: none;
+    color: white;
+    padding: 14px 10px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    right: 14px;
+    margin-top: -46px;
 }
 
 input[type=text] {
@@ -26,7 +39,7 @@ input[type=text] {
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    padding: 12px 150px 12px 40px;
+    padding: 12px 160px 12px 40px;
 }
 
 .fa {

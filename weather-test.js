@@ -1,6 +1,11 @@
 var map = null
 var marker = null
+var icon = {
+    200: '../desktop/climacons-master/SVG/Cloud-Drizzle.svg',
+    500: '../desktop/climacons-master/SVG/Cloud-Lightning.svg',
+}
 
+$("#div-popup").hide();
 $(document).ready(function(){
     $("button").click(function(){
         var apiKEY = "&units=metric&appid=af95bc4e30710dff7080cfb67eadba30"
@@ -16,11 +21,12 @@ $(document).ready(function(){
                 $("#temp_min").html(data.main.temp_min);
                 $("#pressure").html(data.main.pressure + ' hPa').addClass("h3-popup");
                 $("#humidity").html(data.main.humidity + ' %').addClass("h3-popup");
+                $("#weather.icon").html(data.weather.icon);
+                $("#div-popup").show();
                 updateMap(data)
         });
     });
 });
-
 
 function initMap() {
     var uluru = {lat: 0, lng: 0};

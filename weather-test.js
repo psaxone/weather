@@ -1,9 +1,9 @@
 var map = null
 var marker = null
-var icon = {
-    200: '../desktop/climacons-master/SVG/Cloud-Drizzle.svg',
-    500: '../desktop/climacons-master/SVG/Cloud-Lightning.svg',
-}
+// var icon = {
+//     200: '../desktop/climacons-master/SVG/Cloud-Drizzle.svg',
+//     500: '../desktop/climacons-master/SVG/Cloud-Lightning.svg',
+// }
 
 $("#div-popup").hide();
 $(document).ready(function(){
@@ -23,7 +23,11 @@ $(document).ready(function(){
                 $("#humidity").html(data.main.humidity + ' %').addClass("h3-popup");
                 $("#weather.icon").html(data.weather.icon);
                 $("#div-popup").show();
-                updateMap(data)
+                $("#boton-mapa").click(function(){
+                    $("#div-popup").hide(function(){
+                        updateMap(data);
+                    });
+                });
         });
     });
 });

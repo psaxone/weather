@@ -7,7 +7,7 @@ var marker = null
 
 $("#div-popup").hide();
 $(document).ready(function(){
-    $("button").click(function(){
+    $("#boton-search").click(function(){
         var apiKEY = "&units=metric&appid=af95bc4e30710dff7080cfb67eadba30"
         var apiURL = 'http://api.openweathermap.org/data/2.5/weather?q='
         var ciudad = $("#ciudad").val();
@@ -25,14 +25,14 @@ $(document).ready(function(){
                 $("#div-popup").show();
                 $("#boton-mapa").click(function(){
                     $("#div-popup").hide(function(){
-                        updateMap(data);
+                        updateMap(data.coord.lat, data.coord.lon);
                     });
                 });
         });
     });
     $("#boton-geo").click(function(){
         geoLoc();
-        console.log(geoLoc);
+        
     });
 });
 
@@ -44,8 +44,8 @@ function initMap() {
     });
 }
 
-function updateMap(data) {
-     var uluru = {lat: (data.coord.lat), lng: (data.coord.lon)};
+function updateMap(latitud, longitud) {
+     var uluru = {lat: (latitud), lng: (longitud)};
      if (marker === null){
         marker = new google.maps.Marker({
              position: uluru,
@@ -60,9 +60,30 @@ function updateMap(data) {
  
  function geoLoc() {
     navigator.geolocation.getCurrentPosition(function(position) {
-        var pos = {
-          lat: (position.coords.latitude),
-          lng: (position.coords.longitude),
-        };
-    }
+        var uluru = {lat: (position.coords.latitude), lng: (position.coords.longitude)};
+        handleGeoChanges(position.coords.latitude, position.coords.longitude)
+    })
  }
+
+function handleGeoChanges(latitud, longitud) {
+    updateMap(latitud, longitud)
+    var apiKEY = "&units=metric&appid=af95bc4e30710dff7080cfb67eadba30"
+    var apiURLgeoLat = 'http://api.openweathermap.org/data/2.5/weather?lat='
+    var apiURLgeoLon = "&lon="
+    var URLgeo = apiURLgeoLat+latitud+apiURLgeoLon+longitud+apiKEY
+    $.get(URLgeo, function(data) {
+        $("#city").html(data.name).addClass("h2-popup");
+        $("#temperature").html(data.main.temp + 'º').addClass("h1-popup");
+        $("#temp_max").html(data.main.temp_max);
+        $("#temp_min").html(data.main.temp_min);
+        $("#pressure").html(data.main.pressure + ' hPa').addClass("h3-popup");
+        $("#humidity").html(data.main.humidity + ' %').addClass("h3-popup");
+        $("#weather.icon").html(data.weather.icon);
+        $("#div-popup").show();
+        $("#boton-mapa").click(function(){
+            $("#div-popup").hide(function(){
+                updateMap(data.coord.lat, data.coord.lon);
+            });
+        })
+    });
+}

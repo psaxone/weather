@@ -7,7 +7,7 @@ html,body {
     padding: 15px 15px 15px 15px;
 }
 
-button {
+#boton-search {
     position: absolute;
     right: 126px;
     background-color: rgb(59, 119, 250);

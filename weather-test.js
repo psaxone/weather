@@ -1,12 +1,35 @@
 var map = null
 var marker = null
-// var icon = {
-//     200: '../desktop/climacons-master/SVG/Cloud-Drizzle.svg',
-//     500: '../desktop/climacons-master/SVG/Cloud-Lightning.svg',
-// }
+var icon = {
+    "01d": './climacons-master/SVG/Sun.svg',
+    "01n": './climacons-master/SVG/Moon.svg',
+    "02d": './climacons-master/SVG/Cloud-Sun.svg',
+    "02n": './climacons-master/SVG/Cloud-Moon.svg',
+    "03d": './climacons-master/SVG/Cloud.svg',
+    "03n": './climacons-master/SVG/Cloud.svg',
+    "04d": './climacons-master/SVG/Cloud-Wind.svg',
+    "04n": './climacons-master/SVG/Cloud-Wind.svg',
+    "09d": './climacons-master/SVG/Cloud-Drizzle-Sun.svg',
+    "09n": './climacons-master/SVG/Cloud-Drizzle-Moon.svg',
+    "10d": './climacons-master/SVG/Cloud-Drizzle-Sun-Alt.svg',
+    "10n": './climacons-master/SVG/Cloud-Drizzle-Moon-Alt.svg',
+    "11d": './climacons-master/SVG/Cloud-Lightning-Sun.svg',
+    "11n": './climacons-master/SVG/Cloud-Lightning-Moon.svg',
+    "13d": './climacons-master/SVG/Cloud-Snow-Sun-Alt.svg',
+    "13n": './climacons-master/SVG/Cloud-Snow-Moon-Alt.svg',
+    "50d": './climacons-master/SVG/Cloud-Fog-Sun.svg',
+    "50n": './climacons-master/SVG/Cloud-Fog-Moon.svg'
+}
 
 $("#div-popup").hide();
 $(document).ready(function(){
+    $("#boton-search").attr('disabled',true);
+    $('#ciudad').keyup(function(){
+        if($(this).val().length !=0)
+            $("#boton-search").attr('disabled', false);            
+        else
+            $("#boton-search").attr('disabled', true);
+    })
     $("#boton-search").click(function(){
         var apiKEY = "&units=metric&appid=af95bc4e30710dff7080cfb67eadba30"
         var apiURL = 'http://api.openweathermap.org/data/2.5/weather?q='
@@ -21,12 +44,13 @@ $(document).ready(function(){
                 $("#temp_min").html(data.main.temp_min);
                 $("#pressure").html(data.main.pressure + ' hPa').addClass("h3-popup");
                 $("#humidity").html(data.main.humidity + ' %').addClass("h3-popup");
-                $("#weather.icon").html(data.weather.icon);
+                updateMap(data.coord.lat, data.coord.lon);
+                var codigo = data.weather[0].icon
+                var rutaIcono = icon[codigo]
+                $("#weather-icon").attr('src', rutaIcono);
                 $("#div-popup").show();
                 $("#boton-mapa").click(function(){
-                    $("#div-popup").hide(function(){
-                        updateMap(data.coord.lat, data.coord.lon);
-                    });
+                    $("#div-popup").hide()
                 });
         });
     });
@@ -78,12 +102,13 @@ function handleGeoChanges(latitud, longitud) {
         $("#temp_min").html(data.main.temp_min);
         $("#pressure").html(data.main.pressure + ' hPa').addClass("h3-popup");
         $("#humidity").html(data.main.humidity + ' %').addClass("h3-popup");
-        $("#weather.icon").html(data.weather.icon);
+        updateMap(data.coord.lat, data.coord.lon);
+        var codigo = data.weather[0].icon
+        var rutaIcono = icon[codigo]
+        $("#weather-icon").attr('src', rutaIcono);
         $("#div-popup").show();
         $("#boton-mapa").click(function(){
-            $("#div-popup").hide(function(){
-                updateMap(data.coord.lat, data.coord.lon);
-            });
+            $("#div-popup").hide();
         })
     });
 }

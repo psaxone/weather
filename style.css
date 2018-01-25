@@ -163,7 +163,7 @@ h1, h2, h3 {
     text-decoration: none;
     font-size: 16px;
     cursor: pointer;
-    padding: 15px 218px;
+    padding: 15px 15px;
     width: 600px;
 }
 
@@ -178,5 +178,44 @@ h1, h2, h3 {
     }
     #boton-mapa {
         width: 100%;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    #map {
+        height: 100%;
+        width: 100%;
+        /* filter: blur(8px); */
+    }
+    #div-popup {
+        width: 100%;
+        left: 0px;
+        right: 0px;
+        margin-top: 0px;
+        margin-left: 0px;
+        top: 25%;
+    }
+    #boton-mapa {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .h1-popup {
+        font-size: 45px;
+        text-align: center; 
+        padding-top: 66px;
+    }
+    
+    .h2-popup {
+        font-size: 35px;
+        text-align: center;
+        padding-top: 25px;
+    }
+    
+    .h3-popup {
+        font-size: 18px;
+        float: left;
+        padding-top: 30px;
+        padding-left: 15px;
+        padding-right: 15px;
     }
 }

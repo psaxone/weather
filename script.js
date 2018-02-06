@@ -1,24 +1,24 @@
 var map = null;
 var marker = null;
 var icon = {
-  "01d": "./climacons-master/SVG/Sun.svg",
-  "01n": "./climacons-master/SVG/Moon.svg",
-  "02d": "./climacons-master/SVG/Cloud-Sun.svg",
-  "02n": "./climacons-master/SVG/Cloud-Moon.svg",
-  "03d": "./climacons-master/SVG/Cloud.svg",
-  "03n": "./climacons-master/SVG/Cloud.svg",
-  "04d": "./climacons-master/SVG/Cloud-Wind.svg",
-  "04n": "./climacons-master/SVG/Cloud-Wind.svg",
-  "09d": "./climacons-master/SVG/Cloud-Drizzle-Sun.svg",
-  "09n": "./climacons-master/SVG/Cloud-Drizzle-Moon.svg",
-  "10d": "./climacons-master/SVG/Cloud-Drizzle-Sun-Alt.svg",
-  "10n": "./climacons-master/SVG/Cloud-Drizzle-Moon-Alt.svg",
-  "11d": "./climacons-master/SVG/Cloud-Lightning-Sun.svg",
-  "11n": "./climacons-master/SVG/Cloud-Lightning-Moon.svg",
-  "13d": "./climacons-master/SVG/Cloud-Snow-Sun-Alt.svg",
-  "13n": "./climacons-master/SVG/Cloud-Snow-Moon-Alt.svg",
-  "50d": "./climacons-master/SVG/Cloud-Fog-Sun.svg",
-  "50n": "./climacons-master/SVG/Cloud-Fog-Moon.svg"
+  "01d": "./icons/Sun.svg",
+  "01n": "./icons/Moon.svg",
+  "02d": "./icons/Cloud-Sun.svg",
+  "02n": "./icons/Cloud-Moon.svg",
+  "03d": "./icons/Cloud.svg",
+  "03n": "./icons/Cloud.svg",
+  "04d": "./icons/Cloud-Wind.svg",
+  "04n": "./icons/Cloud-Wind.svg",
+  "09d": "./icons/Cloud-Drizzle-Sun.svg",
+  "09n": "./icons/Cloud-Drizzle-Moon.svg",
+  "10d": "./icons/Cloud-Drizzle-Sun-Alt.svg",
+  "10n": "./icons/Cloud-Drizzle-Moon-Alt.svg",
+  "11d": "./icons/Cloud-Lightning-Sun.svg",
+  "11n": "./icons/Cloud-Lightning-Moon.svg",
+  "13d": "./icons/Cloud-Snow-Sun-Alt.svg",
+  "13n": "./icons/Cloud-Snow-Moon-Alt.svg",
+  "50d": "./icons/Cloud-Fog-Sun.svg",
+  "50n": "./icons/Cloud-Fog-Moon.svg"
 };
 
 $("#div-popup").hide();
